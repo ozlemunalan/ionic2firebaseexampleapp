@@ -28,7 +28,7 @@ $ ionic cordova run ios
 
 ## Important !
 
--Replace your own google-services.json file with located in project folder.
+"-Replace your own google-services.json file with located in project folder."
 -You must be sure create a firebase account in link in the below:
 -https://console.firebase.google.com/
 -and same time you must be sure you have already got a facebook api key:
