@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Hello Ionic</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content *ngIf="userProfile; else elseblock;"  padding >
+
+
+
+
+
+
+<p padding>
+<img ion-thumbnail  [src]="userProfile.photoURL" >
+
+</p>
+<h3>{{ userProfile.displayName }}</h3>
+
+<p>
+<button ion-button color="primary" (click)='Logout()'>Logout</button>
+</p>
+
+
+</ion-content>
+<ng-template #elseblock>
+<ion-content >
+<p>
+    <button ion-button color="primary" menuToggle>Toggle Menu</button>
+    <button ion-button color="primary" (click)='openLogin()'>Open Login</button>
+
+</p>
+</ion-content>
+</ng-template>
