@@ -29,13 +29,15 @@ $ ionic cordova run ios
 ## Important !:
 
 -Replace your own google-services.json file with located in project folder.
+
+
 -You must be sure create a firebase account in link in the below:
--https://console.firebase.google.com/
+
+$ https://console.firebase.google.com/
+
+
 -and same time you must be sure you have already got a facebook api key:
--https://developers.facebook.com/
+$ https://developers.facebook.com/
+
 -If you don't know how to configure Facebook with firebase, You may be better to follow the instructions link in the below:
--https://ionicframework.com/docs/native/facebook/
->>>>>>> ea9b1de72f57485c65abbe7dd35eae7c46a08dbc
-
-
- 6c81c23fbe369bb76a14003bdbd7da8ee323b332
+$ https://ionicframework.com/docs/native/facebook/
