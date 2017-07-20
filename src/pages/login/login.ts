@@ -42,6 +42,38 @@ export class LoginPage {
        }).catch((error) => { console.log(error) });
     }
 
+    normalLogin(){
+
+      firebase.auth().signInWithEmailAndPassword(
+        'burakakyol0795@gmail.com',
+        "burak1234"
+      ).then((success)=>{
+      this.presentToast(success.uid);
+
+      }).catch((error)=>{
+
+      this.presentToast(error);
+      });
+
+
+
+
+    }
+    registerWithEmailAndPassword(){
+      firebase.auth().createUserWithEmailAndPassword(
+        'burakakyol0795@gmail.com',
+        "burak1234"
+      ).then((success)=>{
+      this.presentToast(success.password);
+
+    }).catch((error)=>{
+
+      this.presentToast(error);
+    });
+
+
+    }
+
     presentToast(msj){
   let toast=this.tst.create({
   message:msj,

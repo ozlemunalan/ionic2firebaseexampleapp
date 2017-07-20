@@ -17,8 +17,18 @@
   <p>
     <button ion-button center (click)="facebookLogin()">
         Log In with Facebook
-        
+
       </button>
+      <button ion-button center (click)="normalLogin()">
+        Log In With Email
+
+        </button>
+
+    <button ion-button center (click)="registerWithEmailAndPassword()">
+      Register With Email
+
+      </button>
+
       <ion-card *ngIf="userProfile">
     <img [src]="userProfile.photoURL"/>
     <ion-card-content>
@@ -30,5 +40,10 @@
       </p>
     </ion-card-content>
   </ion-card>
+    </p>
+    <p>
+
+
+
     </p>
 </ion-content>
