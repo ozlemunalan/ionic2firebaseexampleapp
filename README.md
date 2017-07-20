@@ -41,3 +41,6 @@ $ ionic cordova run ios
 
 -If you don't know how to configure Facebook with firebase, You may be better to follow the instructions link in the below:
  https://ionicframework.com/docs/native/facebook/
+
+ -I recommend this site  for Ionic 2 Facebook login operations:
+ https://javebratt.com/ionic-2-facebook-login/
