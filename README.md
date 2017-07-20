@@ -23,10 +23,10 @@ $ ionic cordova run ios
 ```
 
 
-<<<<<<< HEAD
+
 "# intern-app-1"
 
-Important !
+### Important !
 Replace your own google-services.json file with located in project folder.
 You must be sure create a firebase account in link in the below:
 https://console.firebase.google.com/
@@ -36,4 +36,4 @@ If you don't know how to configure Facebook with firebase, You may be better to 
 https://ionicframework.com/docs/native/facebook/
 =======
 
->>>>>>> 6c81c23fbe369bb76a14003bdbd7da8ee323b332
+ 6c81c23fbe369bb76a14003bdbd7da8ee323b332
