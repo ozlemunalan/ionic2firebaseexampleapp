@@ -27,6 +27,7 @@ $ ionic cordova run ios
 "# intern-app-1"
 
 ### Important !
+
 -Replace your own google-services.json file with located in project folder.
 -You must be sure create a firebase account in link in the below:
 -https://console.firebase.google.com/
