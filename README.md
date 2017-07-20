@@ -22,8 +22,8 @@ $ ionic cordova platform add ios
 $ ionic cordova run ios
 ```
 
-Substitute ios for android if not on a Mac.
 
+<<<<<<< HEAD
 "# intern-app-1"
 
 Important !
@@ -34,3 +34,6 @@ and same time you must be sure you have already got a facebook api key:
 https://developers.facebook.com/
 If you don't know how to configure Facebook with firebase, You may be better to follow the instructions link in the below:
 https://ionicframework.com/docs/native/facebook/
+=======
+
+>>>>>>> 6c81c23fbe369bb76a14003bdbd7da8ee323b332
