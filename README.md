@@ -33,11 +33,11 @@ $ ionic cordova run ios
 
 -You must be sure create a firebase account in link in the below:
 
-$ https://console.firebase.google.com/
+ https://console.firebase.google.com/
 
 
 -and same time you must be sure you have already got a facebook api key:
-$ https://developers.facebook.com/
+ https://developers.facebook.com/
 
 -If you don't know how to configure Facebook with firebase, You may be better to follow the instructions link in the below:
-$ https://ionicframework.com/docs/native/facebook/
+ https://ionicframework.com/docs/native/facebook/
