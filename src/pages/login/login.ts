@@ -16,7 +16,8 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+email:any;
+password:any;
   constructor(public navCtrl: NavController,private facebook: Facebook,private storage: Storage,public tst:ToastController) {
 
   }
@@ -61,10 +62,15 @@ export class LoginPage {
     }
     registerWithEmailAndPassword(){
       firebase.auth().createUserWithEmailAndPassword(
-        'burakakyol0795@gmail.com',
-        "burak1234"
+        this.email,
+        this.password
       ).then((success)=>{
-      this.presentToast(success.password);
+        firebase.database().ref('user/'+success.uid).set({
+
+          email:success.email,
+          joindate:new Date().getDate().toString()
+        });
+      this.presentToast(success.uid);
 
     }).catch((error)=>{
 

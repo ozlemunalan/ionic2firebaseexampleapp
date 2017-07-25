@@ -23,7 +23,19 @@
         Log In With Email
 
         </button>
+        <ion-list>
 
+          <ion-item>
+            <ion-label fixed placeholder="E-Mail">E-mail</ion-label>
+            <ion-input type="text"  [value]="email" [(ngModel)]="email" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label fixed>Password</ion-label>
+            <ion-input  [value]="password" [(ngModel)]="password" type="password"></ion-input>
+          </ion-item>
+
+        </ion-list>
     <button ion-button center (click)="registerWithEmailAndPassword()">
       Register With Email
 

@@ -15,8 +15,13 @@ export class HelloIonicPage {
 @ViewChild(Content) content: Content;
   constructor(public navCtrl: NavController,private facebook: Facebook,public tst:ToastController, public zone: NgZone,private storage:Storage)
   {
-this.getUserDetails();
+    let name=firebase.database().ref('user/3').once('value').then((snapshot)=>{
+      this.presentToast(snapshot.child("name").val());
+    }).catch((error)=>{
+      this.presentToast('sdsada');
+    });
 
+this.getUserDetails();
   }
   userProfile: any = null;
 getUserDetails(){
@@ -27,7 +32,14 @@ this.presentToast('Hoşgeldin  '+username);
   }).catch((error)=>{this.presentToast('Lütfen giriş yapınız')});
 
 }
+ekle(){
+firebase.database().ref('user/3').set({
+  name:'ali',
+  surname:'veli'
+});
 
+
+}
 scrollTo() {
    // set the scrollLeft to 0px, and scrollTop to 500px
    // the scroll duration should take 200ms
