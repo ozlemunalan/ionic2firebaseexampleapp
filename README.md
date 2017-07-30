@@ -1,4 +1,11 @@
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## CHANGELOG
+
+# 30.07.2017
+-Page designs updated(Login,Register,UserProfile,Messages,Contacts)
+-Login and register input validations completed
+-Users will not have to log in every time(will be improved)
+
 
 ## How to use this template
 
