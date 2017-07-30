@@ -1,40 +1,10 @@
+<ion-content padding>
+<ion-tabs selectedIndex="1">
+  <ion-tab tabIcon="contacts" tabTitle="Kişiler" [root]="Kisiler">Kisiler</ion-tab>
+  <ion-tab tabIcon="chatbubbles" tabTitle="Mesajlar" [root]="Mesajlar">Mesajlar</ion-tab>
+  <ion-tab tabIcon="contact" tabTitle="Profil" [root]="Profil">Profil</ion-tab>
 
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>InternApp1</ion-title>
-  </ion-navbar>
-</ion-header>
-
-
-<ion-content *ngIf="userProfile; else elseblock;"  padding >
-
-
-
-
-
-
-<p padding>
-<img ion-thumbnail  [src]="userProfile.photoURL" >
-
-</p>
-<h3>{{ userProfile.displayName }}</h3>
-
-<p>
-<button ion-button color="primary" (click)='Logout()'>Logout</button>
-</p>
+</ion-tabs>
 
 
 </ion-content>
-<ng-template #elseblock>
-<ion-content >
-<p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-    <button ion-button color="primary" (click)='openLogin()'>Open Login</button>
-        <button ion-button color="primary" (click)='ekle()'>Ekle</button>
-
-</p>
-</ion-content>
-</ng-template>

@@ -4,10 +4,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { Facebook } from '@ionic-native/facebook'
-
+import {RegisterPage} from '../pages/register/register';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
-//import { ListPage } from '../pages/list/list';
+import { ListPage } from '../pages/list/list';
 import {LoginPage} from '../pages/login/login';
 import { DetailsPage } from '../pages/details/details';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,6 +16,10 @@ import { Push } from '@ionic-native/push';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { KisilerPage } from '../pages/kisiler/kisiler';
+import { MesajlarPage } from '../pages/mesajlar/mesajlar';
+import { ProfilPage } from '../pages/profil/profil';
+import { MesajPage } from '../pages/mesaj/mesaj';
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': 'eba47b38'
@@ -39,9 +43,14 @@ const cloudSettings: CloudSettings = {
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-  //  ListPage,
+   ListPage,
     DetailsPage,
-    LoginPage
+    LoginPage,
+ 	RegisterPage,
+ 	KisilerPage,
+ 	MesajlarPage,
+ 	ProfilPage,
+ 	MesajPage
   ],
   imports: [
     BrowserModule,
@@ -55,8 +64,13 @@ const cloudSettings: CloudSettings = {
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-  //  ListPage,
-    LoginPage
+   ListPage,
+   LoginPage,
+RegisterPage,
+KisilerPage,
+MesajlarPage,
+ProfilPage,
+MesajPage
   ],
   providers: [
     StatusBar,
