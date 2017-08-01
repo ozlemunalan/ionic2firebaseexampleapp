@@ -16,7 +16,7 @@ import firebase from 'firebase';
 })
 export class KisilerPage {
 
-  kisiler:Array<{key: string, username: string,displayName:string}>;
+  kisiler:Array<{key: string, username: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController) {
 this.kisiler=[];
@@ -26,12 +26,20 @@ this.kisiler=[];
   getUsers(){
 	   firebase.database().ref('user').once('value').then( (kisi) =>{
 	  kisi.forEach( (child) => {
+      if(child.key!==firebase.auth().currentUser.uid){
+
+
+      var uname=child.child('username').val();
+      if(uname===null){
+        uname=child.child('displayName').val();
+      }
 		  let kisi={key:child.key,
-		  username:child.child('username').val(),
-      displayName:child.child('displayName').val()
+		  username:uname
+
 		  };
 
 		  this.kisiler.push(kisi);
+        }
 	  })
   }).catch( (error) => {
 

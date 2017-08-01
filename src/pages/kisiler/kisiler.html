@@ -11,14 +11,14 @@
 <ion-list>
     <button ion-item *ngFor="let user of kisiler" (click)="openMessagePage(user.key)" >
 
-	  {{user.key}}
-      <div class="item-note" item-right>
-
-        {{user.username}}
-      </div>
       <ion-avatar item-start>
         <img src="vakifbank.logo.jpg">
       </ion-avatar>
+      <div class="item-note" item-left>
+
+        {{user.username}}
+      </div>
+
 
 	   </button>
   </ion-list>

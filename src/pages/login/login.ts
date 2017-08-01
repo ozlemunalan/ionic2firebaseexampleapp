@@ -37,6 +37,11 @@ userProfile: any = null;
            firebase.auth().signInWithCredential(facebookCredential)
            .then((success) => {
                console.log("Firebase success: " + JSON.stringify(success));
+               firebase.database().ref('user/'+success.uid).set({
+       		username:success.displayName,
+                 email:success.email
+
+               });
                this.storage.set('user',success);
                this.userProfile = success;
                this.navCtrl.push(HelloIonicPage);

@@ -60,6 +60,9 @@ getUserName(uid,obj){
 
 firebase.database().ref('user/'+uid).once('value').then((snapshot)=>{
       obj.username=snapshot.child("username").val();
+      if(obj.username===null){
+        obj.username=firebase.auth().currentUser.displayName;
+      }
 
     }).catch ( (error) =>{
       this.presentToast("HATA");
