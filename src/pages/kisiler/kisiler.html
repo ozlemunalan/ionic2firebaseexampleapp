@@ -9,20 +9,17 @@
 
 <ion-content padding>
 <ion-list>
-    <button ion-item *ngFor="let user of kisiler" >
+    <button ion-item *ngFor="let user of kisiler" (click)="openMessagePage(user.key)" >
 
 	  {{user.key}}
       <div class="item-note" item-right>
+
         {{user.username}}
       </div>
       <ion-avatar item-start>
         <img src="vakifbank.logo.jpg">
       </ion-avatar>
-      
+
 	   </button>
   </ion-list>
 </ion-content>
-
-  
-    
-

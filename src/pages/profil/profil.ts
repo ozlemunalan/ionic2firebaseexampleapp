@@ -2,6 +2,7 @@ import { Component,NgZone } from '@angular/core';
 import { NavController, NavParams,ToastController,App } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { LoginPage} from '../login/login';
+import firebase from 'firebase';
 
 
 /**
@@ -17,9 +18,12 @@ import { LoginPage} from '../login/login';
 })
 export class ProfilPage {
 userProfile:any=null;
+
   constructor(private zone: NgZone,public navCtrl: NavController, public navParams: NavParams,private storage:Storage,public tst:ToastController,public app:App)
   {
 	 this.getUserDetails();
+
+
   }
 
   ionViewDidLoad() {
@@ -39,18 +43,24 @@ toast.present();
     }
 	    Logout()
     {
-      this.storage.remove('user');
-let nav=this.app.getRootNav();
-nav.setRoot(LoginPage);
-      this.presentToast('Çıkış Yapıldı.');
+
+
+    this.storage.remove('user');
+    let nav=this.app.getRootNav();
+    nav.setRoot(LoginPage);
+
+
+
 
     }
  getUserDetails(){
+
 this.storage.get('user').then((val) => {
 
-this.userProfile=val;
+this.userProfile= firebase.auth().currentUser;
+
 if(this.userProfile.photoURL===null)
-this.userProfile.photoURL="vakifbank.logo.jpg";
+ firebase.auth().currentUser.updateProfile({displayName:this.userProfile.displayName,photoURL:"vakifbank.logo.jpg"}).then( ()=>{console.log('profil photo has updated');}).catch( (error)=>{console.log(error);});
   }).catch((error)=>{
 	  this.presentToast('Lütfen giriş yapınız')
 

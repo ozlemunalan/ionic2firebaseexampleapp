@@ -10,22 +10,26 @@ import { MesajlarPage } from '../mesajlar/mesajlar';
 import { ProfilPage } from '../profil/profil';
 
 
+
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
 })
+
 export class HelloIonicPage {
  Kisiler = KisilerPage;
   Mesajlar = MesajlarPage;
   Profil = ProfilPage;
 
 @ViewChild(Content) content: Content;
- userProfile: any = null;
+ public userProfile: any = null;
+
   constructor(private loadingCtrl:LoadingController,public navCtrl: NavController,private facebook: Facebook,public tst:ToastController, public zone: NgZone,private storage:Storage)
   {
 
 
 	  this.isLogin();
+
 
 
   }

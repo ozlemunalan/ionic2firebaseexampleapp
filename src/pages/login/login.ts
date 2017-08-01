@@ -73,10 +73,13 @@ let loading = this.loadingCtrl.create({
         this.email,
 		this.password
       ).then((success)=>{
+        
 		  console.log('Giriş yapılıyor');
+
 		   this.storage.set('user',success);
       this.navCtrl.push(HelloIonicPage);
 	  console.log('Giriş başarılı');
+    console.log(success);
 	  }).catch((error)=>{
 		  this.presentToast(error);
 	  });

@@ -7,7 +7,8 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>mesaj</ion-title>
+    <ion-title>{{this.userID}}</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -16,3 +17,9 @@
 <ion-content padding>
 
 </ion-content>
+<ion-footer>
+	<ion-item>
+		<ion-input type="text" placeholder="Mesajınızı giriniz..." [(ngModel)]="newmessage"></ion-input>
+		<button ion-button clear item-right (click)="send()">Send</button>
+	</ion-item>
+</ion-footer>

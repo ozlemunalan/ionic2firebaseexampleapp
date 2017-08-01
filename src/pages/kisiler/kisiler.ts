@@ -15,9 +15,9 @@ import firebase from 'firebase';
   templateUrl: 'kisiler.html',
 })
 export class KisilerPage {
-	
-  kisiler:Array<{key: string, username: string}>;
- 
+
+  kisiler:Array<{key: string, username: string,displayName:string}>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController) {
 this.kisiler=[];
   this.presentLoadingDefault();
@@ -27,13 +27,14 @@ this.kisiler=[];
 	   firebase.database().ref('user').once('value').then( (kisi) =>{
 	  kisi.forEach( (child) => {
 		  let kisi={key:child.key,
-		  username:child.child('username').val()
+		  username:child.child('username').val(),
+      displayName:child.child('displayName').val()
 		  };
-		 
+
 		  this.kisiler.push(kisi);
 	  })
   }).catch( (error) => {
-	  
+
 	  console.log(error);
   });
   }
@@ -45,11 +46,17 @@ presentLoadingDefault() {
   loading.present().then( () => {
 	  this.getUsers();
 	  loading.dismiss();
-	  
+
   });
 
 
-} 
+}
+
+openMessagePage(uid)
+{
+this.navCtrl.push(MesajPage,{id:uid});
+
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad KisilerPage');
   }
