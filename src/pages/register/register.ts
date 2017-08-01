@@ -36,7 +36,7 @@ toast.present();
 
     }
   openLoginPage(){
-	 
+
 	  this.navCtrl.push(LoginPage);
   }
   registerWithEmailAndPassword(){
@@ -45,13 +45,17 @@ toast.present();
       firebase.auth().createUserWithEmailAndPassword(
         this.email,
         this.password,
-		
+
 
       ).then((success)=>{
+        success.updateProfile({
+          displayName:this.username,
+          photoURL:"vakifbank.logo.jpg"
+        });
         firebase.database().ref('user/'+success.uid).set({
 		username:this.username,
           email:success.email
-          
+
         });
 	this.presentLoadingDefault();
 	 this.navCtrl.push(LoginPage);
@@ -60,12 +64,12 @@ toast.present();
 	});
 	}
 	else
-	{   
+	{
 		this.presentToast("Girilen şifreler eşleşmiyor.Lütfen kontrol ediniz!");
 	}
 }
 else
-	{   
+	{
 		this.presentToast("Username ve email alanı boş geçilemez!");
 	}
   }
@@ -79,12 +83,11 @@ presentLoadingDefault() {
   setTimeout(() => {
     loading.dismiss();
   }, 5000);
-} 
+}
 
 
- 
-	
 
-	
+
+
+
 	}
-

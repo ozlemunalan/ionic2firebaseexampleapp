@@ -59,15 +59,7 @@ this.storage.get('user').then((val) => {
 
 this.userProfile= firebase.auth().currentUser;
 
-if(this.userProfile.photoURL===null)
- firebase.auth().currentUser.updateProfile({displayName:this.userProfile.displayName,photoURL:"vakifbank.logo.jpg"}).then( ()=>{console.log('profil photo has updated');}).catch( (error)=>{console.log(error);});
-  }).catch((error)=>{
-	  this.presentToast('Lütfen giriş yapınız')
-
-
-	  });
-
+});
 }
-
 
 }

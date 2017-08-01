@@ -26,12 +26,7 @@ export class HelloIonicPage {
 
   constructor(private loadingCtrl:LoadingController,public navCtrl: NavController,private facebook: Facebook,public tst:ToastController, public zone: NgZone,private storage:Storage)
   {
-
-
 	  this.isLogin();
-
-
-
   }
 
 getUserDetails(){
@@ -55,8 +50,6 @@ let toast=this.tst.create({
   position:'bottom'
 });
 toast.present();
-
-
     }
     openLogin(){
       this.navCtrl.push(LoginPage)
@@ -81,7 +74,7 @@ toast.present();
 		else
 		{
 		console.log('Giriş yapınız');
-		this.navCtrl.setRoot(LoginPage);
+
 		}
 
 

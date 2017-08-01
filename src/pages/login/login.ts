@@ -22,7 +22,7 @@ email:any;
 password:any;
 userProfile: any = null;
   constructor(public navCtrl: NavController,private facebook: Facebook,private storage: Storage,public tst:ToastController,public loadingCtrl: LoadingController) {
-this.checkUser();
+
   }
 
   mesaj:any="asd";
@@ -73,7 +73,7 @@ let loading = this.loadingCtrl.create({
         this.email,
 		this.password
       ).then((success)=>{
-        
+
 		  console.log('Giriş yapılıyor');
 
 		   this.storage.set('user',success);
@@ -107,6 +107,7 @@ checkUser(){
 	}
 /*Login kontrolünün yapılması */
 	isLogin(){
+  var val=firebase.auth().currentUser;
 
 	this.storage.get('user').then((val) => {
 		 this.userProfile=val;
