@@ -60,9 +60,9 @@ presentLoadingDefault() {
 
 }
 
-openMessagePage(uid)
+openMessagePage(uid,username)
 {
-this.navCtrl.push(MesajPage,{id:uid});
+this.navCtrl.push(MesajPage,{id:uid,uname:username});
 
 }
   ionViewDidLoad() {

@@ -32,6 +32,15 @@ this.getMessages();
   	//reading data from firebase
 
   }
+  doRefresh(refresher) {
+   console.log('Begin async operation',this.getMessages());
+
+
+   setTimeout(() => {
+     console.log('Async operation has ended');
+     refresher.complete();
+   }, 2000);
+ }
   presentToast(msj){
 let toast=this.tst.create({
 message:msj,
@@ -89,6 +98,7 @@ firebase.database().ref('user/'+id+'/conversations/'+rid+'/messages/').once('val
 }
 
   getMessages(){
+    this.messages=[];
     this.storage.get('user').then((val) => {
       var id=this.userProfile.uid;
 

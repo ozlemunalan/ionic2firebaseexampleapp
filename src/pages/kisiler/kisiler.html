@@ -9,7 +9,7 @@
 
 <ion-content padding>
 <ion-list>
-    <button ion-item *ngFor="let user of kisiler" (click)="openMessagePage(user.key)" >
+    <button ion-item *ngFor="let user of kisiler" (click)="openMessagePage(user.key,user.username)" >
 
       <ion-avatar item-start>
         <img src="vakifbank.logo.jpg">
